@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج تسجيل ورشة عمل الرسم</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- IBM Plex Sans Arabic Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D3832',
+                        secondary: '#145A50',
+                        accent: '#D2A16E',
+                        darkaccent: '#AE7848',
+                        appleBg: '#080C0B',
+                        cardBg: '#121A18',
+                        darkText: '#E2E8F0',
+                        mutedText: '#94A3B8'
+                    },
+                    fontFamily: {
+                        sans: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #080C0B;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+        .apple-glass {
+            background: rgba(18, 26, 24, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .apple-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.04);
+        }
+        .apple-input {
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .apple-input:focus {
+            border-color: #21A38E;
+            box-shadow: 0 0 0 4px rgba(33, 163, 142, 0.25);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-[#080C0B] text-[#E2E8F0] antialiased min-h-screen flex flex-col justify-between selection:bg-[#21A38E] selection:text-white">
+
+    <header class="sticky top-0 z-50 apple-glass border-b border-gray-900 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0D3832] to-[#166156] flex items-center justify-center shadow-md overflow-hidden p-1 border border-white/10">
+                    <img src="https://cdn.phototourl.com/free/2026-09-15-fdc29d10-82b2-4713-a015-b86d8c04401d.png" alt="Logo" class="w-full h-full object-cover rounded-xl" onerror="this.src='https://placehold.co/100x100/0D3832/ffffff?text=LOGO'">
+                </div>
+                <div>
+                    <span class="block font-bold text-lg text-white tracking-tight">أكاديمية الفنون</span>
+                    <span class="text-xs text-[#94A3B8] font-medium">ورشة رسم اليوم الوطني</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#94A3B8]">
+                <a href="#about" class="hover:text-white transition-colors">عن الورشة</a>
+                <a href="#details" class="hover:text-white transition-colors">التفاصيل</a>
+                <a href="#register" class="hover:text-white transition-colors">التسجيل</a>
+            </nav>
+            <div>
+                <a href="#register" class="bg-[#166156] hover:bg-[#21A38E] text-white text-sm font-medium px-5 py-2.5 rounded-full shadow-sm transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    سجل الآن مجاناً
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section id="about" class="relative pt-20 pb-16 px-6 overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#166156]/15 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
+            
+            <div class="max-w-4xl mx-auto text-center animate-fade-in">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D2A16E]/10 text-[#D2A16E] text-xs font-bold mb-6 tracking-wide uppercase border border-[#D2A16E]/20">
+                    <i class="fa-solid fa-star text-[10px]"></i>
+                    برعاية كريمة من مؤسسة سالم بن محفوظ الاهلية
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-8">
+                    نموذج تسجيل ورشة عمل الرسم
+                </h1>
+                <p class="text-lg sm:text-xl text-[#94A3B8] leading-relaxed font-light max-w-2xl mx-auto mb-10">
+                    الحياة عبارة عن لوحة ألوانها متنوعة ونحن نرسم على هذه اللوحة باقوالنا وأفعالنا لان الرسم طريقة مختلفة لكتابة الذكريات والمشاعر والاحاسيس والرسام ينسج عالمه بخيال واسع لايمكن ان يعيشه في الواقع. معاً سنرسم لوحات تنبض بالمشاعر والاحاسيس والحب مع الفنانة المبدعة وفاء يونس فلاته المدربة بأكاديمية تطوير الذات مع تحيات فريق الفوز التابع لجمعية التنمية الاهلية بعوالي المدينة المنورة.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="#register" class="bg-[#166156] hover:bg-[#21A38E] text-white font-medium px-8 py-4 rounded-full shadow-lg shadow-[#166156]/30 transition-all duration-300 transform hover:-translate-y-0.5">
+                        احجز مقعدك المجاني الآن <i class="fa-solid fa-arrow-left mr-2"></i>
+                    </a>
+                    <a href="#details" class="bg-[#121A18] hover:bg-[#1a2522] text-white border border-gray-800 font-medium px-8 py-4 rounded-full shadow-sm transition-all duration-300">
+                        معرفة التفاصيل
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="details" class="py-16 px-6 bg-[#0B100F] border-y border-gray-900">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">تفاصيل ورشة العمل الإبداعية</h2>
+                    <p class="text-[#94A3B8] max-w-xl mx-auto">كل ما تحتاج لمعرفته حول المواعيد، الفئات المستهدفة، والفنانة المشرفة على الورشة.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="apple-shadow bg-[#121A18] p-8 rounded-3xl border border-gray-800/80 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#0D3832] text-[#21A38E] flex items-center justify-center text-2xl mb-6 border border-white/5">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">بإشراف الفنانة المبدعة</h3>
+                            <p class="text-[#94A3B8] font-medium leading-relaxed mb-4">
+                                وفاء يونس فلاته<br>
+                                <span class="text-sm text-gray-500 font-normal">المدربة بأكاديمية تطوير الذات</span>
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 text-xs text-gray-400 font-medium">
+                            فريق الفوز التابع لجمعية التنمية الاهلية بعوالي المدينة المنورة
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="apple-shadow bg-[#121A18] p-8 rounded-3xl border border-gray-800/80 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#166156]/20 text-[#21A38E] flex items-center justify-center text-2xl mb-6 border border-white/5">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">الموعد والزمان</h3>
+                            <p class="text-[#94A3B8] font-medium leading-relaxed mb-2">
+                                السبت: 8 / 4 / 1448 هـ<br>
+                                الموافق: 19 / 9 / 2026 م
+                            </p>
+                            <p class="text-sm text-[#21A38E] font-bold">
+                                من الساعة الرابعة إلى السابعة مساءً
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+                            <span class="text-xs text-gray-400">رسوم الورشة سابقاً: 50 ريال</span>
+                            <span class="bg-[#D2A16E]/15 text-[#D2A16E] text-xs px-2.5 py-1 rounded-full font-bold border border-[#D2A16E]/20">مجاناً بمناسبة اليوم الوطني</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="apple-shadow bg-[#121A18] p-8 rounded-3xl border border-gray-800/80 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#D2A16E]/15 text-[#D2A16E] flex items-center justify-center text-2xl mb-6 border border-white/5">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">الفئات المستهدفة</h3>
+                            <ul class="text-[#94A3B8] space-y-2 text-sm">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-[#21A38E] text-xs"></i>
+                                    البنات: من عمر خمس سنوات إلى الأمهات
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-[#21A38E] text-xs"></i>
+                                    الأولاد: من عمر خمس سنوات إلى ثماني سنوات
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800">
+                            <a href="https://maps.google.com/?q=24.450022,39.619968" target="_blank" class="inline-flex items-center gap-2 text-xs text-[#21A38E] font-bold hover:underline">
+                                <i class="fa-solid fa-location-dot"></i> عرض موقع الورشة على الخريطة
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register" class="py-20 px-6">
+            <div class="max-w-2xl mx-auto">
+                <div class="apple-shadow bg-[#121A18] rounded-3xl p-8 sm:p-12 border border-gray-800/80 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#166156]/20 to-transparent rounded-bl-full pointer-events-none"></div>
+
+                    <div class="text-center mb-10">
+                        <span class="text-xs uppercase tracking-widest text-[#21A38E] font-bold block mb-2">سجل الآن</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white">نموذج التسجيل في الورشة</h2>
+                        <p class="text-[#94A3B8] text-sm mt-2">يرجى تعبئة الحقول أدناه بدقة لضمان تأكيد مقعدك.</p>
+                    </div>
+
+                    <!-- Hidden iframe for cross-origin form submission -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccessModal(); }"></iframe>
+                    
+                    <form id="workshopForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfcmaeGmQY2Gqlg_5aedJyN52zYyV1GhPpLM19WHTuC-crbeg/formResponse" method="POST" target="hidden_iframe" onsubmit="handleFormSubmit(event);" class="space-y-6">
+                        
+                        <!-- Hidden tokens required by Google Forms -->
+                        <input type="hidden" name="fvv" value="1">
+                        <input type="hidden" name="partialResponse" value='[null,null,"-7197062565116579476"]'>
+                        <input type="hidden" name="pageHistory" value="0">
+                        <input type="hidden" name="fbzx" value="-7197062565116579476">
+                        
+                        <!-- Field 1: الاسم ثلاثي -->
+                        <div>
+                            <label for="entry.1932407581" class="block text-sm font-bold text-gray-200 mb-2">
+                                الاسم ثلاثي <span class="text-red-400">*</span>
+                            </label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-500">
+                                    <div class="w-6 h-6 rounded-lg bg-[#0D3832] flex items-center justify-center p-0.5 overflow-hidden border border-white/5">
+                                        <img src="https://cdn.phototourl.com/free/2026-09-15-fdc29d10-82b2-4713-a015-b86d8c04401d.png" alt="icon" class="w-full h-full object-cover rounded" onerror="this.src='https://placehold.co/40x40/0D3832/ffffff?text=I'">
+                                    </div>
+                                </span>
+                                <input type="text" id="entry.1932407581" name="entry.1932407581" required 
+                                    class="apple-input w-full pr-14 pl-4 py-3.5 rounded-2xl bg-[#080C0B] border border-gray-800 text-white text-sm focus:bg-[#121A18] outline-none"
+                                    placeholder="أدخل الاسم الثلاثي هنا">
+                            </div>
+                        </div>
+
+                        <!-- Field 2: العمر -->
+                        <div>
+                            <label for="entry.128421537" class="block text-sm font-bold text-gray-200 mb-2">
+                                العمر <span class="text-red-400">*</span>
+                            </label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-500">
+                                    <i class="fa-regular fa-calendar"></i>
+                                </span>
+                                <input type="text" id="entry.128421537" name="entry.128421537" required 
+                                    class="apple-input w-full pr-11 pl-4 py-3.5 rounded-2xl bg-[#080C0B] border border-gray-800 text-white text-sm focus:bg-[#121A18] outline-none"
+                                    placeholder="أدخل العمر أو الفئة العمرية">
+                            </div>
+                        </div>
+
+                        <!-- Field 3: رقم الجوال -->
+                        <div>
+                            <label for="entry.809457994" class="block text-sm font-bold text-gray-200 mb-2">
+                                رقم الجوال <span class="text-red-400">*</span>
+                            </label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-500">
+                                    <i class="fa-solid fa-phone"></i>
+                                </span>
+                                <input type="tel" id="entry.809457994" name="entry.809457994" required 
+                                    class="apple-input w-full pr-11 pl-4 py-3.5 rounded-2xl bg-[#080C0B] border border-gray-800 text-white text-sm focus:bg-[#121A18] outline-none"
+                                    placeholder="05xxxxxxxx">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button & Spinner -->
+                        <div class="pt-4">
+                            <button type="submit" id="submitBtn" class="w-full bg-[#166156] hover:bg-[#21A38E] text-white font-bold py-4 rounded-2xl shadow-lg shadow-[#166156]/30 transition-all duration-300 flex items-center justify-center gap-3">
+                                <span id="btnText">إرسال التسجيل</span>
+                                <i id="btnIcon" class="fa-solid fa-paper-plane text-xs"></i>
+                                <svg id="loadingSpinner" class="animate-spin h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Contact details placed directly below the registration button -->
+                        <div class="pt-6 border-t border-gray-800 flex flex-wrap items-center justify-between text-xs text-gray-400 gap-3">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-phone text-[#21A38E]"></i>
+                                <span>للتواصل: 0537780407</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-[#21A38E]"></i>
+                                <a href="https://maps.google.com/?q=24.450022,39.619968" target="_blank" class="hover:underline text-[#21A38E] font-bold">عرض الموقع على الخريطة</a>
+                            </div>
+                        </div>
+
+                        <p class="text-center text-xs text-gray-500 mt-2">
+                            عدم إرسال كلمات المرور عبر نماذج Google مطلقًا.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-[#121A18] border border-gray-800 rounded-3xl p-8 max-w-md w-full mx-4 text-center apple-shadow transform scale-95 transition-transform duration-300" id="modalContent">
+            <div class="w-16 h-16 bg-[#166156]/20 text-[#21A38E] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl border border-[#21A38E]/20">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">تم إرسال طلبك بنجاح!</h3>
+            <p class="text-[#94A3B8] text-sm mb-6 leading-relaxed">
+                شكراً لتسجيلك في ورشة العمل. نتطلع لرؤيتك وإبداعاتك معنا. تم حفظ ردك في النظام بنجاح.
+            </p>
+            <button onclick="closeSuccessModal()" class="w-full bg-[#166156] hover:bg-[#21A38E] text-white font-medium py-3.5 rounded-2xl transition-all duration-300">
+                تم، إغلاق النافذة
+            </button>
+        </div>
+    </div>
+
+    <footer class="bg-[#0B100F] border-t border-gray-900 py-10 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-right">
+            <div>
+                <p class="text-xs text-gray-400 mb-1">
+                    جميع الحقوق محفوظة بواسطة | <a href="https://mol7j.com" target="_blank" class="text-[#21A38E] font-bold hover:underline transition-colors">محمد الحاج</a>
+                </p>
+                <p class="text-xs text-gray-500">
+                    جمعية التنمية الاهلية بعوالي المدينة المنورة © 2026
+                </p>
+            </div>
+
+            <!-- Social Media Icons (Instagram, X, Official Website) with enhanced contrast -->
+            <div class="flex items-center gap-4 justify-center">
+                <!-- X (Twitter) Icon with High Contrast Fill -->
+                <a href="https://x.com/tnmiaaorgsa" target="_blank" aria-label="X (Twitter)" class="w-11 h-11 rounded-full bg-[#1A2522] hover:bg-[#166156] text-white flex items-center justify-center transition-all duration-300 shadow-sm border border-gray-700">
+                    <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/tnmiaaorgsa" target="_blank" aria-label="Instagram" class="w-11 h-11 rounded-full bg-[#1A2522] hover:bg-[#166156] text-white flex items-center justify-center transition-all duration-300 shadow-sm border border-gray-700">
+                    <i class="fa-brands fa-instagram text-base text-white"></i>
+                </a>
+                <a href="https://www.tnmiaa.org.sa/" target="_blank" aria-label="Official Website" class="w-11 h-11 rounded-full bg-[#1A2522] hover:bg-[#166156] text-white flex items-center justify-center transition-all duration-300 shadow-sm border border-gray-700" title="الموقع الرسمي">
+                    <i class="fa-solid fa-globe text-base text-white"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let submitted = false;
+
+        function handleFormSubmit(event) {
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            submitBtn.disabled = true;
+            btnText.textContent = 'جاري الإرسال...';
+            btnIcon.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+
+            submitted = true;
+            return true;
+        }
+
+        function showSuccessModal() {
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+
+            document.getElementById('workshopForm').reset();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            submitBtn.disabled = false;
+            btnText.textContent = 'إرسال التسجيل';
+            btnIcon.classList.remove('hidden');
+            loadingSpinner.classList.add('hidden');
+            submitted = false;
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
